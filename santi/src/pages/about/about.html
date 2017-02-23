@@ -1,11 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Saints of the day
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+    <ion-list>
+      <button ion-item *ngFor="let santo of santi" (click)="itemSelected(santo)">
+        {{ santo.Nome }}
+      </button>  
+    </ion-list>
 </ion-content>

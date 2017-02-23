@@ -15,7 +15,6 @@ export class SaintDetailPage {
 
   santo: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log(navParams.get('santoSelected'));
     this.santo = navParams.get('santoSelected');
   }
 

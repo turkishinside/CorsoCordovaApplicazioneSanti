@@ -28,4 +28,30 @@ export class SantiService {
     return response;
   }
 
+  getSaint(santoName) {
+    let opt: RequestOptions;
+    let myHeaders: Headers = new Headers;
+    myHeaders.set('Accept', 'application/json');
+    opt = new RequestOptions({
+      headers: myHeaders
+    });
+
+    var url = 'http://santieicone.azurewebsites.net/search/' + santoName;
+    var response = this.http.get(url,opt).map(res => res.json());
+    return response;
+  }
+
+  getSaintByDate(mese,giorno) {
+    let opt: RequestOptions;
+    let myHeaders: Headers = new Headers;
+    myHeaders.set('Accept', 'application/json');
+    opt = new RequestOptions({
+      headers: myHeaders
+    });
+
+    var url = 'http://santieicone.azurewebsites.net/saints/' + mese + '/' + giorno;
+    var response = this.http.get(url,opt).map(res => res.json());
+    return response;
+  }
+
 }
